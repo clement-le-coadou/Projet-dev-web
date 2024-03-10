@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr-FR">
+    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet"> 
+        <title>Drip Team</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="JS/formulaire.js" defer></script>
+
+    </head>
+
+    <body>
+        <header>            
+            <h2>Accueil</h2>
+            <h1 class="name"> Nom Entreprise</h1>
+            <img class="Logo"
+                src="img/Logo.png"
+                alt="Not Loaded"
+                width="100" />    
+            <button type="button" width="200px"><img src="/img/user.png" alt="Utilisa    teur"></button>
+        </header>
+
+        <div class="topnav">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sportive.html">Sportive</a></li>
+            <li><a href="coupe.html">Coupé</a></li>
+            <li><a href="citadine.html">Citadine</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </div>
+
+        <div class="content">
+            <div class="left_nav">
+                <li><a href="test">article 1</a></li>
+            </div>
+            <div id="collection">           
+                <div class="article">
+
+                </div>
+                <div class="article">
+                
+ 
+                </div>
+            </div>
+            <div class="formulaire">
+                <form action="" method="POST" onsubmit="return validateForm()">
+                    <div class="align-label" id="top">
+                        <label for="nom">Votre nom :</label>
+                        <input id="nom" name="nom" type="text" placeholder="Entrez votre nom">
+                        <span id="nom_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="align-label">
+                        <label for="prenom">Votre prénom :</label>
+                        <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom">
+                        <span id="prenom_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="align-label">
+                        <label for="date">Votre date de naissance :</label>
+                        <input id="date" name="date" type="date">
+                        <span id="date_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="align-label">
+                        <label for="mail">Votre adresse email :</label>
+                        <input id="mail" name="mail" type="email" placeholder="Entrez votre email">
+                        <span id="mail_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="align-label">
+                        <label for="mdp">Mot de passe :</label>
+                        <input id="mdp" name="mdp" type="password">
+                        <span id="mdp_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="align-label">
+                        <label for="conf_mdp">Confirmation du mot de passe :</label>
+                        <input id="conf_mdp" name="conf_mdp" type="password">
+                        <span id="conf_mdp_error" class="error-message"></span>
+                    </div>
+                    <br>
+                    <div class="button">
+                       <input type="submit" value="Inscription" name="inscription">
+                    </div>
+                </form>
+                
+            </div>
+
+        </div>
+        <footer>
+
+        </footer>
+
+      
+    </body>
+  
+</html>
