@@ -188,11 +188,16 @@ footer li a{
     margin-bottom: 5px;
 }
 
+.align-label label{
+  white-space: nowrap;
+}
+
 input[type="text"],
 input[type="date"],
 input[type="email"],
 input[type="password"],
-input[type="submit"] {
+input[type="submit"] 
+input[type="radio"]{
     width: 300px;
     margin-left: 200px;
     padding: 10px;
