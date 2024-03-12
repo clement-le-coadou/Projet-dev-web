@@ -6,7 +6,6 @@ function validateContactForm() {
     var metier = document.getElementById("metier").value;
     var sujet = document.getElementById("sujet").value.trim();
     var mail = document.getElementById("mail").value.trim();
-    var message = document.getElementById("message").value.trim();
 
     var isValid = true;
 
@@ -17,8 +16,7 @@ function validateContactForm() {
         "genre": "Veuillez sélectionner votre genre.",
         "metier": "Veuillez sélectionner votre métier.",
         "sujet": "Veuillez entrer le sujet de votre message.",
-        "mail": "Veuillez entrer une adresse email valide.",
-        "message": "Veuillez entrer votre message."
+        "mail": "Veuillez entrer une adresse email valide."
     };
 
     // Vérification du format de l'adresse email
@@ -42,10 +40,10 @@ function validateContactForm() {
             var fieldElement = document.getElementById(field);
             var errorElement = document.getElementById(field + "_error");
 
-            if (field === "genre" && !value) {
+            if (field === "genre" && !genre) {
                 document.getElementById("genre_error").innerText = errorMessage;
                 isValid = false;
-            } else if (field === "metier" && value === "") {
+            } else if (field === "metier" && metier === "") {
                 document.getElementById("metier_error").innerText = errorMessage;
                 isValid = false;
             } else {
