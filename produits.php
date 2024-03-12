@@ -24,7 +24,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
 
     <body>
         <header>            
-            <h2>$categorie</h2>
+            <h2><?php echo $categorie ?></h2>
             <h1 class="name"> Nom Entreprise</h1>
             <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />    
             <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
