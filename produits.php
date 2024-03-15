@@ -35,18 +35,18 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
 
         <div class="topnav">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="sportive.html">Sportive</a></li>
-            <li><a href="coupe.html">Coupé</a></li>
-            <li><a href="citadine.html">Citadine</a></li>
+            <li><a href="http://localhost:8080/produits.php?cat=sportives">Sportive</a></li>
+            <li><a href="http://localhost:8080/produits.php?cat=coupes">Coupé</a></li>
+            <li><a href="http://localhost:8080/produits.php?cat=citadines">Citadine</a></li>
             <li><a href="contact.html">Contact</a></li>
         </div>
 
         <div class="content">
             <div class="left_nav">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="sportive.html">Sportive</a></li>
-                <li><a href="coupe.html">Coupé</a></li>
-                <li><a href="citadine.html">Citadine</a></li>
+                <li><a href="http://localhost:8080/produits.php?cat=sportives">Sportive</a></li>
+                <li><a href="http://localhost:8080/produits.php?cat=coupes">Coupé</a></li>
+                <li><a href="http://localhost:8080/produits.php?cat=citadines">Citadine</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </div>
             <div id="collection">
