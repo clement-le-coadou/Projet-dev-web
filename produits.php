@@ -20,6 +20,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet"> 
         <title>Drip Team</title>
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/article.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -50,19 +51,22 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
                 <li><a href="contact.html">Contact</a></li>
             </div>
             <div id="collection">
-                    <h1>Produits de la catégorie <?php echo ucfirst($categorie); ?></h1>
+                <h1>Produits de la catégorie <?php echo ucfirst($categorie); ?></h1>
 
                     
-                        <?php foreach($produits as $produit): ?>
+                <?php foreach($produits as $produit): ?>
                 <div class="article">
-                                <img src="images/<?php echo $produit['photo']; ?>" alt="<?php echo $produit['nom']; ?>">
-                                <h3><?php echo $produit['nom']; ?></h3>
-                                <p>Prix : <?php echo $produit['prix']; ?> €</p>
-                                <p>Référence : <?php echo $produit['reference']; ?></p>  
-                  </div>
-                        <?php endforeach; ?>
+                    <img src="img/<?php echo $produit['photo']; ?>" alt="<?php echo $produit['nom']; ?>">
+                    <h3><?php echo $produit['nom']; ?></h3>
+                    <p>Prix : <?php echo $produit['prix']; ?> €</p>
+                    <p>Référence : <?php echo $produit['reference']; ?></p>
+                    <p><div class="stock" style="visibility:hidden">Quantité : <?php echo $produit['stock']; ?></div></p>
+                </div>
+                <?php endforeach; ?>
+                <button type="button" onclick="var stocks = document.getElementsByClassName('stock');
+                    for (var i = 0; i < stocks.length; i++) {
+                        stocks[i].style.visibility = 'visible';}">Voir le stock</button>
 
-                
             </div>
 
         </div>
