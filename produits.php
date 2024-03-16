@@ -61,6 +61,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
                     <p>Prix : <?php echo $produit['prix']; ?> €</p>
                     <p>Référence : <?php echo $produit['reference']; ?></p>
                     <p><div class="stock" style="visibility:hidden">Quantité : <?php echo $produit['stock']; ?></div></p>
+                    <p><button onclick="">-</button><?php echo $produit['panier']?><button onclick="">+</button></p>
                 </div>
                 <?php endforeach; ?>
                 <button type="button" onclick="var stocks = document.getElementsByClassName('stock');
