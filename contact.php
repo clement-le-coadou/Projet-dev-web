@@ -1,4 +1,4 @@
-<?php include 'php/gestion_contact.php'; ?>
+<?php include 'php/gestion_contact.php'; include 'php/gestion_connexion.php'; ?>
 
 <!doctype html>
 <html lang="fr-FR">
@@ -21,14 +21,14 @@
             <h2><?php echo $categorie ?></h2>
             <h1 class="name"> Nom Entreprise</h1>
             <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />
-            <form action="" method="POST" onsubmit="return connexion()">    
-            <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
+            <form action="" method="POST" onsubmit="">    
+                <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
                 <span id="emailError" class="error" style="display:none;">Adresse e-mail incorrecte</span>
                 <br>
-                <input type="password" name="Mot de passe" id="Mdp" placeholder="Mot de passe">
+                <input type="password" name="Mot_de_passe" id="Mdp" placeholder="Mot de passe">
                 <span id="passwordError" class="error" style="display:none;">Veuillez entrer un mot de passe</span>
                 <br>
-                <button type="submit"><img src="img/user.png" alt="Connexion"></button>
+                <button type="submit" value = "connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
             </form>
             <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
         </header>
@@ -53,19 +53,19 @@
                 <form action="" method="POST" onsubmit="return validateContactForm()">
                     <div class="align-label" id="top">
                         <label for="nom">Votre nom :</label>
-                        <input id="nom" name="nom" type="text" placeholder="Entrez votre nom">
+                        <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" value="<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>">
                         <span id="nom_error" class="error-message"><?php echo $errorMessageNom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="prenom">Votre prénom :</label>
-                        <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom">
+                        <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom" value="<?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : ''; ?>">
                         <span id="prenom_error" class="error-message"><?php echo $errorMessagePrenom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="mail">Votre adresse email :</label>
-                        <input id="mail" name="mail" type="email" placeholder="Entrez votre email">
+                        <input id="mail" name="mail" type="email" placeholder="Entrez votre email" value="<?php echo isset($_SESSION['mail']) ? $_SESSION['mail'] : ''; ?>">
                         <span id="mail_error" class="error-message"><?php echo $errorMessageMail; ?></span>
                     </div>
                     <br>
@@ -91,7 +91,7 @@
                     <br>
                     <div class="align-label">
                         <label for="date">Votre date de naissance :</label><br>
-                        <input id="date" name="date" type="date">
+                        <input id="date" name="date" type="date" value="<?php echo isset($_SESSION['date']) ? $_SESSION['date'] : ''; ?>">
                         <span id="date_error" class="error-message"><?php echo $errorMessageDate; ?></span>
                     </div>
                     <br>
