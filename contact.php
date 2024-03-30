@@ -13,16 +13,23 @@
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/formulaires.css" rel="stylesheet" />
         <script src="JS/contact.js" defer></script>
+        <script src="JS/connexion.js" defer></script>
     </head>
 
     <body>
         <header>            
             <h2><?php echo $categorie ?></h2>
             <h1 class="name"> Nom Entreprise</h1>
-            <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />    
+            <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />
+            <form action="" method="POST" onsubmit="return connexion()">    
             <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
-            <input type="text" name="Mot de passe" id="Mdp" placeholder="Mot de passe">
-            <button type="submit"><img src="img/user.png" alt="Connexion"></button>
+                <span id="emailError" class="error" style="display:none;">Adresse e-mail incorrecte</span>
+                <br>
+                <input type="password" name="Mot de passe" id="Mdp" placeholder="Mot de passe">
+                <span id="passwordError" class="error" style="display:none;">Veuillez entrer un mot de passe</span>
+                <br>
+                <button type="submit"><img src="img/user.png" alt="Connexion"></button>
+            </form>
             <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
         </header>
 
