@@ -31,7 +31,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
             <input type="text" name="Mot de passe" id="Mdp" placeholder="Mot de passe">
             <button type="submit"><img src="img/user.png" alt="Connexion"></button>
-            <a href="inscription.html" id="NewUser"> Nouvel Utilisateur ?</a>
+            <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
         </header>
 
         <div class="topnav">
