@@ -129,7 +129,7 @@ if (isset($_POST['Inscription'])) {
                             ));
 
                             // Redirige vers la page de connexion avec un message de succès
-                            header('Location:index.html');
+                            header('Location:index.php');
                             die();
                         } else {
                             $errorMessage = 'Les mots de passe saisis ne correspondent pas.';
