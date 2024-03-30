@@ -1,4 +1,4 @@
-<?php include 'php/bddData.php';?>
+<?php include 'php/gestion_inscription.php';?>
 <!doctype html>
 <!doctype html>
 <html lang="fr-FR">
@@ -24,7 +24,7 @@
             <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
             <input type="text" name="Mot de passe" id="Mdp" placeholder="Mot de passe">
             <button type="submit"><img src="img/user.png" alt="Connexion"></button>
-            <a href="inscription.html" id="NewUser"> Nouvel Utilisateur ?</a>
+            <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
         </header>
 
         <div class="topnav">
