@@ -1,3 +1,5 @@
+<?php include 'php/gestion_contact.php'; ?>
+
 <!doctype html>
 <html lang="fr-FR">
     
@@ -45,19 +47,19 @@
                     <div class="align-label" id="top">
                         <label for="nom">Votre nom :</label>
                         <input id="nom" name="nom" type="text" placeholder="Entrez votre nom">
-                        <span id="nom_error" class="error-message"></span>
+                        <span id="nom_error" class="error-message"><?php echo $errorMessageNom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="prenom">Votre prénom :</label>
                         <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom">
-                        <span id="prenom_error" class="error-message"></span>
+                        <span id="prenom_error" class="error-message"><?php echo $errorMessagePrenom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="mail">Votre adresse email :</label>
                         <input id="mail" name="mail" type="email" placeholder="Entrez votre email">
-                        <span id="mail_error" class="error-message"></span>
+                        <span id="mail_error" class="error-message"><?php echo $errorMessageMail; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
@@ -66,7 +68,7 @@
                         <label for="H">H</label>
                         <input id="genre" name="genre" value="F" type="radio" >
                         <label for="F">F</label>
-                        <span id="genre_error" class="error-message"></span>
+                        <span id="genre_error" class="error-message"><?php echo $errorMessageGenre; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
@@ -77,31 +79,33 @@
                             <option value="Medical">Médical</option>
                             <option value="Autre">Autre</option>
                         </select>
+                        <span id="metier_error" class="error-message"><?php echo $errorMessageMetier; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="date">Votre date de naissance :</label><br>
                         <input id="date" name="date" type="date">
-                        <span id="date_error" class="error-message"></span>
+                        <span id="date_error" class="error-message"><?php echo $errorMessageDate; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="sujet">Sujet :</label>
                         <input id="sujet" name="sujet" type="text" placeholder="Le sujet de votre message">
-                        <span id="sujet_error" class="error-message"></span>
+                        <span id="sujet_error" class="error-message"><?php echo $errorMessageSujet; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="contenu">Contenu :</label>
                         <input id="contenu" name="contenu" type="text" placeholder="Votre message">
-                        <span id="contenu_error" class="error-message"></span>
+                        <span id="contenu_error" class="error-message"><?php echo $errorMessageContenu; ?></span>
                     </div>
                     <br>
-                    <div class="button" onclick="">
-                       <input type="submit" value="Inscription" name="inscription">
+                    <div class="button">
+                       <input type="submit" value="Envoyer" name="contact">
                     </div>
                 </form>
             </div>
+            
 
         </div>
         <footer>
