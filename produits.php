@@ -1,5 +1,5 @@
 <?php 
-include 'php/varSession.inc.php';
+include 'php/bdd.php';
 
 if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
     $categorie = $_GET['cat'];
