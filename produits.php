@@ -5,7 +5,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
     $categorie = $_GET['cat'];
     $produits = $_SESSION['categories'][$categorie];
 } else {
-    header("Location: index.html");
+    header("Location: index.php");
     exit;
 }
 ?>
