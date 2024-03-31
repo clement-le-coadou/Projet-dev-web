@@ -1,0 +1,30 @@
+-- Créer la table pour stocker les données des voitures
+CREATE TABLE voitures (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    categorie VARCHAR(50) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
+    prix INT NOT NULL,
+    reference VARCHAR(20) NOT NULL,
+    photo VARCHAR(100) NOT NULL,
+    stock INT NOT NULL,
+    panier INT NOT NULL
+);
+
+-- Insérer les données des voitures dans la table
+INSERT INTO voitures (categorie, nom, prix, reference, photo, stock, panier)
+VALUES 
+('citadines', 'Toyota Yaris', 15000, 'TOY-001', 'yaris.jpg', 6, 0),
+('citadines', 'Renault Clio', 16000, 'REN-002', 'clio.jpg', 13, 0),
+('citadines', 'Volkswagen Polo', 17000, 'VOLK-003', 'polo.jpg', 9, 0),
+('citadines', 'Peugeot 208', 17000, 'PEU-004', '208.jpg', 8, 0),
+('citadines', 'Fiat 500', 16000, 'FIA-005', '500.jpg', 10, 0),
+('sportives', 'Porsche 911', 100000, 'POR-001', 'porsche.jpg', 1, 0),
+('sportives', 'BMW M4', 90000, 'BMW-002', 'm4.jpg', 2, 0),
+('sportives', 'Audi R8', 110000, 'AUD-003', 'r8.jpg', 0, 0),
+('sportives', 'Nissan GT-R', 120000, 'NIS-004', 'gtr.jpg', 4, 0),
+('sportives', 'Ford Mustang Shelby GT500', 125000, 'FOR-005', 'shelby.jpg', 2, 0),
+('coupes', 'Ford Mustang', 70000, 'FOR-001', 'mustang.jpg', 5, 0),
+('coupes', 'Chevrolet Camaro', 75000, 'CHEV-002', 'camaro.jpg', 7, 0),
+('coupes', 'Mercedes-Benz Classe C Coupé', 80000, 'MB-003', 'mercedes.jpg', 3, 0),
+('coupes', 'Aston Martin Vantage', 140000, 'AST-004', 'vantage.jpg', 6, 0),
+('coupes', 'Jaguar F-Type', 135000, 'JAG-005', 'ftype.jpg', 3, 0);
