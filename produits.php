@@ -24,7 +24,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
     </head>
 
     <body>
-        <?php include "header.php" ?>
+        <?php include "header.php"; ?>
 
 
         <div class="content">
@@ -50,7 +50,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             </div>
 
         </div>
-        <?php include "footer.php" ?>
+        <?php include "footer.php"; ?>
 
       
     </body>
