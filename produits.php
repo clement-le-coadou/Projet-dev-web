@@ -39,7 +39,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
                     <h3><?php echo $produit['nom']; ?></h3>
                     <p>Prix : <?php echo $produit['prix']; ?> €</p>
                     <p>Référence : <?php echo $produit['reference']; ?></p>
-                    <p><div class="stock" style="visibility:hidden">Quantité : <span id="stock_<?php echo $produit['id'];?>"><?php echo $produit['stock']; ?></span</div></p>
+                    <p><div class="stock" style="visibility:hidden">Quantité : <span id="stock_<?php echo $produit['id'];?>"><?php echo $produit['stock']; ?></span></div></p>
                     <p><button onclick="">-</button><?php echo $produit['panier']?><button onclick="">+</button></p>
                 </div>
                 <?php endforeach; ?>
