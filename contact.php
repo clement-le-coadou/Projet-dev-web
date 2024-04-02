@@ -21,13 +21,7 @@
 
 
         <div class="content">
-            <div class="left_nav">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=sportives">Sportive</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=coupes">Coupé</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=citadines">Citadine</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </div>
+            <?php include "left_nav.php" ?>
             <div id="contact">           
                 <form action="" method="POST" onsubmit="return validateContactForm()">
                     <div class="align-label" id="top">

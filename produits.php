@@ -28,13 +28,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
 
 
         <div class="content">
-            <div class="left_nav">
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=sportives">Sportive</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=coupes">Coupé</a></li>
-                <li><a href="http://localhost:8080/produits.php?cat=citadines">Citadine</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </div>
+            <?php include "left_nav.php" ?>
             <div id="collection">
                 <h1>Produits de la catégorie <?php echo ucfirst($categorie); ?></h1>
 

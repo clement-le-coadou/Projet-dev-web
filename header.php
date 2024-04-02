@@ -1,3 +1,4 @@
+<link href="css/style.css" rel="stylesheet" />
 <header>            
     <h2><?php echo $categorie ?></h2>
     <h1 class="name"> Nom Entreprise</h1>
