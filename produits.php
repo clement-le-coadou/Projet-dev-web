@@ -21,6 +21,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
         <title>Drip Team</title>
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/article.css" rel="stylesheet" />
+        <script src="JS/produit.js" defer></script>
     </head>
 
     <body>
