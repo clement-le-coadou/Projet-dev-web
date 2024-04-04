@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'php/bdd.php';
 
 if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {

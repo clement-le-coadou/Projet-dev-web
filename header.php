@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<link href="css/style.css" rel="stylesheet" />
+<link href="css/header.css" rel="stylesheet" />
 <?php include "php/gestion_connexion.php";?>
 <header>            
     <h2><?php echo $categorie ?></h2>
@@ -25,6 +25,7 @@
     <li><a href="http://localhost:8080/produits.php?cat=sportives">Sportive</a></li>
     <li><a href="http://localhost:8080/produits.php?cat=coupes">Coupé</a></li>
     <li><a href="http://localhost:8080/produits.php?cat=citadines">Citadine</a></li>
+    <li><a href="http://localhost:8080/panier.php">Panier</a></li>
     <li><a href="contact.php">Contact</a></li>
 </div>
 <script>

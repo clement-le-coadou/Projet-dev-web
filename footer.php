@@ -1,4 +1,4 @@
-<link href="css/style.css" rel="stylesheet" />
+<link href="css/footer.css" rel="stylesheet" />
 <footer>
     <img src="img/Logo.png" alt="Logo" width="100px">
     <div id="EL"><h2>Espace Légal</h2>

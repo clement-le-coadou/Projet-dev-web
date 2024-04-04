@@ -1,0 +1,16 @@
+footer{
+    background-color: #303642;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 100px;
+}
+footer li{
+  list-style: none;
+}
+footer img{
+  grid-column: 0/1;
+}
+footer li a{
+  color: #e8e4de;
+}

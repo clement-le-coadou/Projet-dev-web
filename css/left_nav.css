@@ -1,0 +1,28 @@
+.left_nav{
+    width: 200px;
+    background-color: #303642;
+    padding: 5%;
+    grid-column-start: 0;
+    grid-column-end: 1;
+  }
+  .left_nav li{
+    list-style: none;
+  }
+  .left_nav a {
+    width: 85%;
+    height: 50px;
+    align-items:center;
+    text-align: center;
+    border-radius:  20px;
+    font-family: 'Oswald', sans-serif;
+    display: block;
+    color: #FFFAF4;
+    text-align: center;
+    padding: auto;
+    margin: 15px;
+    text-decoration: none;
+  }
+  .left_nav a:hover {
+    background-color: #FFFAF4;
+    color: #303642;
+  }

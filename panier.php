@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -20,7 +21,7 @@
             <div class="article">
                 <h1>Votre Panier:</h1>
                 <?php
-                session_start();
+
                 if (empty($_SESSION['cart'])) {
                     echo "<p>Votre panier est vide.</p>";
                 } else {
