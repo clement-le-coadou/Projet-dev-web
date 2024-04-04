@@ -15,7 +15,7 @@
                 <input type="password" name="Mot_de_passe" id="Mdp" placeholder="Mot de passe">
                 <span id="passwordError" class="error" style="display:none;">Veuillez entrer un mot de passe</span>
                 <br>
-                <button type="submit" value = "connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
+                <button type="submit" value = "connexion" name="connexion"><img src="img+/user.png" alt="Connexion"></button>
             </form>
     <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
     <?php }?>

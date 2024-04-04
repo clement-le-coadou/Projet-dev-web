@@ -46,6 +46,8 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
                         <span id="panier_<?php echo $produit['id']; ?>"><?php echo $produit['panier']; ?></span>
                         <button onclick="increment(<?php echo $produit['id']; ?>)">+</button>
                     </p>
+                    <p><button onclick="addToCart(<?php echo $produit['id']; ?>)">Ajouter au panier</button></p>
+
                 </div>
             
                 <?php endforeach; ?>
@@ -57,7 +59,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
 
         </div>
         <?php include "footer.php"; ?>
-
+        
       
     </body>
   
