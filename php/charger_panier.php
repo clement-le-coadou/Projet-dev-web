@@ -2,10 +2,11 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $productId = $_POST['product_id'];
     $quantity = $_POST['quantity'];
-    $_SESSION['cart'][$productId] = $quantity;
+    $categorie=$_POST['categorie'];
+    $name=$_POST['name'];
+    $_SESSION[$categorie][$name]['panier']= $quantity;
     echo "Le produit a été ajouté au panier avec succès.";
-    echo $_SESSION['cart'][$productId];
+    echo $_SESSION[$categorie][$name]['panier'];
 }
 ?>

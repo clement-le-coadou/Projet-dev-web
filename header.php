@@ -6,7 +6,10 @@
     <h1 class="name"> DripCars</h1>
     <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />    
     <?php if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='true'){
-        ?><button type=button onclick="logout()"><img src="img/connexion.png" alt=""></button><?php
+        ?><form action="php/deconnexion.php" method="post">
+            <button type=submit name="deco"><img src="img/connexion.png" alt=""></button>
+        </form>
+    <?php
     }else{ ?>
     <form action="" method="POST" onsubmit="">    
                 <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
@@ -28,9 +31,3 @@
     <li><a href="http://localhost:8080/panier.php">Panier</a></li>
     <li><a href="contact.php">Contact</a></li>
 </div>
-<script>
-function logout() {
-    <?php session_destroy(); ?>
-    window.location.href = window.location.href;
-}
-</script>

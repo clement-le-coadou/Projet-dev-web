@@ -1,4 +1,16 @@
-<?php session_start();?>
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $quantity = $_POST['quantity'];
+    $categorie = $_POST['categorie'];
+    $name = $_POST['name'];
+    $_SESSION['categories'][$categorie][$name]['panier'] = $quantity;
+    echo "Le produit a été ajouté au panier avec succès.";
+    echo $_SESSION['categories'][$categorie][$name]['panier'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 
@@ -10,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
     <title>Drip Team - Panier</title>
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/article.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -18,37 +31,31 @@
     <div class="content">
         <?php include "left_nav.php" ?>
         <div id="collection">
-            <div class="article">
+            <div id="panier" class="article" style="margin-left:15%">
                 <h1>Votre Panier:</h1>
                 <?php
-
-                if (empty($_SESSION['cart'])) {
-                    echo "<p>Votre panier est vide.</p>";
-                } else {
-                    foreach ($_SESSION['cart'] as $productId => $quantity) {
-                        $product = getProductById($productId);
-                        echo "<p>Nom: " . $product['nom'] . "</p>";
-                        echo "<p>Prix unitaire: " . $product['prix'] . " €</p>";
-                        echo "<p>Quantité: " . $quantity . "</p>";
-                        echo "<hr>";
+                echo isset($_SESSION['categories']);
+                if (isset($_SESSION['categories'])) {
+                    foreach ($_SESSION['categories'] as $categorie => $produits) {
+                        foreach ($produits as $nom => $produit) {
+                            if (isset($produit['panier']) && $produit['panier'] != 0) {
+                                echo "Nom: " . $nom . "<br>";
+                                echo "Catégorie: " . $categorie . "<br>";
+                                echo "Quantité: " . $produit['panier'] . "<br>";
+                                echo "Prix Unitaire" . $produit['prix']."<br>";
+                                echo "Prix Total".$produit['prix']*$produit['panier']."<br>";
+                                echo "<hr>";
+                            }
+                        }
                     }
-                }
-
-                function getProductById($productId)
-                {
-                    return array(
-                        'nom' => 'Produit ' . $productId,
-                        'prix' => rand(10, 100)
-                    );
+                } else {
+                    echo "Votre panier est vide.";
                 }
                 ?>
             </div>
         </div>
-
     </div>
     <?php include "footer.php"; ?>
-
-
 </body>
 
 </html>

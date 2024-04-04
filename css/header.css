@@ -1,66 +1,66 @@
 header {
-    background-color: #303642;
-    width: auto;
-    display: flex;
-    text-align: right;
-    padding: 10px;
-  }
-  header input{
-    width: auto;
-    height: 45px;
-    background-color: #e8e4de;
-    color: #303642;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  header button{
-    height: 45px;
-    width: 45px;
-    margin:22px;
-    background-color: #e8e4de;
-    border-radius: 20px;
-  }
-  header button img{
-    width: 30px;
-    height: 30px;
-  }
-  .Logo{
-    position: relative;
-    top: 0;
-    right: 0;
-    height: 100%;
-    margin-right: 30px;
-    margin-left: 15px;
-    display: block;
-    clip-path: circle();
-  }
-  #NewUser{
-    margin-top: 35px;
-    color:#e8e4de;
-  }
-  .topnav{
-    list-style-type: none;
-    border-radius: 0px 0px 25px 0px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    float: center;
-    background-color: #303642;
-    text-decoration: none;
-  }
-  .topnav a {
-    width: 18.25%;
-    border-radius: 20px;
-    font-family: 'Oswald', sans-serif;
-    float: left;
-    display: block;
-    color: #FFFAF4;
-    text-align: center;
-    padding: 1em;
-    margin: 0px;
-    text-decoration: none;
-  }
-  .topnav a:hover {
-    background-color: #FFFAF4;
-    color: #303642;
-  }
+  background-color: #303642;
+  width: auto;
+  display: flex;
+  text-align: right;
+  padding: 10px;
+}
+header input{
+  width: auto;
+  height: 45px;
+  background-color: #e8e4de;
+  color: #303642;
+  margin: 20px;
+  border-radius: 10px;
+}
+header button{
+  height: 45px;
+  width: 45px;
+  margin:22px;
+  background-color: #e8e4de;
+  border-radius: 20px;
+}
+header button img{
+  width: 30px;
+  height: 30px;
+}
+.Logo{
+  position: relative;
+  top: 0;
+  right: 0;
+  height: 100%;
+  margin-right: 30px;
+  margin-left: 15px;
+  display: block;
+  clip-path: circle();
+}
+#NewUser{
+  margin-top: 35px;
+  color:#e8e4de;
+}
+.topnav{
+  list-style-type: none;
+  border-radius: 0px 0px 25px 0px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: center;
+  background-color: #303642;
+  text-decoration: none;
+}
+.topnav a {
+  width: 14.75%;
+  border-radius: 20px;
+  font-family: 'Oswald', sans-serif;
+  float: left;
+  display: block;
+  color: #FFFAF4;
+  text-align: center;
+  padding: 1em;
+  margin: 0px;
+  text-decoration: none;
+}
+.topnav a:hover {
+  background-color: #FFFAF4;
+  color: #303642;
+}

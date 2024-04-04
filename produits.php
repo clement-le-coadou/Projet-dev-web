@@ -47,15 +47,26 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
                         <span id="panier_<?php echo $produit['id']; ?>"><?php echo $produit['panier']; ?></span>
                         <button onclick="increment(<?php echo $produit['id']; ?>)">+</button>
                     </p>
-                    <p><button onclick="addToCart(<?php echo $produit['id']; ?>)">Ajouter au panier</button></p>
+                    
+                    <p><button onclick="addToCart(<?php echo $produit['id']; ?>, '<?php echo $categorie; ?>', '<?php echo $produit['nom']; ?>')">Ajouter au panier</button></p>
 
                 </div>
             
+                
                 <?php endforeach; ?>
-                <button type="button" onclick="var stocks = document.getElementsByClassName('stock');
-                    for (var i = 0; i < stocks.length; i++) {
-                        stocks[i].style.visibility = 'visible';}">Voir le stock</button>
-
+                <button type="button" onclick="toggleStockVisibility()">Afficher/Cacher le stock</button>
+                <script>
+                    function toggleStockVisibility() {
+                        var stocks = document.getElementsByClassName('stock');
+                        for (var i = 0; i < stocks.length; i++) {
+                            if (stocks[i].style.visibility == 'hidden') {
+                                stocks[i].style.visibility = 'visible';
+                            } else {
+                                stocks[i].style.visibility = 'hidden';
+                            }
+                        }
+                    }
+                </script>
             </div>
 
         </div>
