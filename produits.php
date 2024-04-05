@@ -51,7 +51,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             
                 
                 <?php endforeach; ?>
-                <button type="button" onclick="toggleStockVisibility()" style="width:100px;height:50px;">Afficher/Cacher le stock</button>
+                <button class="stock" type="button" onclick="toggleStockVisibility()" style="width:100px;height:50px;">Afficher/Cacher le stock</button>
 
             </div>
 

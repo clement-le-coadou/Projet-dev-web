@@ -28,3 +28,7 @@
   padding: 25px;
   white-space: nowrap;
 }
+
+button.stock{
+  padding: 2px;
+}
