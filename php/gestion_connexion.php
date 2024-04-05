@@ -7,6 +7,8 @@ $bdd = new PDO('sqlite:bdd.db');
 // Initialisez les messages d'erreur à vide
 $emailError = $passwordError = "";
 
+$error = "";
+
 // Vérifiez si le formulaire a été soumis
 if (isset($_POST['connexion'])) {
     // Récupérez les valeurs des champs du formulaire
