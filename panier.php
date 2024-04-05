@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Drip Team - Panier</title>
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/article.css" rel="stylesheet" />
+    <link href="css/panier.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -34,17 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="panier" class="article" style="margin-left:15%">
                 <h1>Votre Panier:</h1>
                 <?php
-                echo isset($_SESSION['categories']);
+
                 if (isset($_SESSION['categories'])) {
                     foreach ($_SESSION['categories'] as $categorie => $produits) {
                         foreach ($produits as $nom => $produit) {
                             if (isset($produit['panier']) && $produit['panier'] != 0) {
-                                echo "Nom: " . $nom . "<br>";
+                                ?> <div class='produit'><?php
+                                echo $nom . "<br>";
                                 echo "Catégorie: " . $categorie . "<br>";
                                 echo "Quantité: " . $produit['panier'] . "<br>";
                                 echo "Prix Unitaire" . $produit['prix']."<br>";
                                 echo "Prix Total".$produit['prix']*$produit['panier']."<br>";
-                                echo "<hr>";
+                                ?><hr></div><?php
+                                
                             }
                         }
                     }

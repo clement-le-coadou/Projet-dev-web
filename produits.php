@@ -32,16 +32,13 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
         <div class="content">
             <?php include "left_nav.php" ?>
             <div id="collection">
-                <h1>Produits de la catégorie <?php echo ucfirst($categorie); ?></h1>
-
-                    
                 <?php foreach($produits as $produit): ?>
                 <div class="article">
                     <img src="img/<?php echo $produit['photo']; ?>" alt="<?php echo $produit['nom']; ?>">
                     <h3><?php echo $produit['nom']; ?></h3>
                     <p>Prix : <?php echo $produit['prix']; ?> €</p>
                     <p>Référence : <?php echo $produit['reference']; ?></p>
-                    <p><div class="stock" style="visibility:hidden">Quantité : <span id="stock_<?php echo $produit['id'];?>"><?php echo $produit['stock']; ?></span></div></p>
+                    <p><div class="stock" style="visibility:collapse">Quantité : <span id="stock_<?php echo $produit['id'];?>"><?php echo $produit['stock']; ?></span></div></p>
                     <p>
                         <button onclick="decrement(<?php echo $produit['id']; ?>)">-</button>
                         <span id="panier_<?php echo $produit['id']; ?>"><?php echo $produit['panier']; ?></span>
@@ -54,19 +51,8 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             
                 
                 <?php endforeach; ?>
-                <button type="button" onclick="toggleStockVisibility()">Afficher/Cacher le stock</button>
-                <script>
-                    function toggleStockVisibility() {
-                        var stocks = document.getElementsByClassName('stock');
-                        for (var i = 0; i < stocks.length; i++) {
-                            if (stocks[i].style.visibility == 'hidden') {
-                                stocks[i].style.visibility = 'visible';
-                            } else {
-                                stocks[i].style.visibility = 'hidden';
-                            }
-                        }
-                    }
-                </script>
+                <button type="button" onclick="toggleStockVisibility()" style="width:100px;height:50px;">Afficher/Cacher le stock</button>
+
             </div>
 
         </div>

@@ -44,3 +44,15 @@ function addToCart(productId,categorie,name) {
     }
 }
 
+function toggleStockVisibility() {
+    var stocks = document.getElementsByClassName('stock');
+    for (var i = 0; i < stocks.length; i++) {
+        if (stocks[i].style.visibility == 'collapse') {
+            stocks[i].style.visibility = 'visible';
+        } else {
+            stocks[i].style.visibility = 'collapse';
+        }
+    }
+}
+
+

@@ -1,0 +1,11 @@
+.produit{
+    justify-content: left;
+}
+#panier{
+    width: 1000px;
+    height: fit-content;
+    min-height: 250px;
+    flex-direction: column;
+    justify-content: center;
+    line-break: loose;
+  }

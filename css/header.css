@@ -3,6 +3,7 @@ header {
   width: auto;
   display: flex;
   text-align: right;
+  flex-direction: row;
   padding: 10px;
 }
 header input{
