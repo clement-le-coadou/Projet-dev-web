@@ -9,6 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet"> 
         <title>Drip Team</title>
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/article.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -19,10 +20,6 @@
             <div id="collection">           
                 <div class="article">
 
-                </div>
-                <div class="article">
-                
- 
                 </div>
             </div>
 
