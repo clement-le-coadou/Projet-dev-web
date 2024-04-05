@@ -17,9 +17,9 @@
 
         <div class="content">
             <?php include "left_nav.php" ?>
-            <div id="collection">           
+            <div id="collection1">           
                 <div class="article">
-
+                    azdadad
                 </div>
             </div>
 
