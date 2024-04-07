@@ -29,6 +29,7 @@
         <li>Nom : <?php echo isset($_GET['nom']) ? htmlspecialchars($_GET['nom']) : ''; ?></li>
         <li>Prénom : <?php echo isset($_GET['prenom']) ? htmlspecialchars($_GET['prenom']) : ''; ?></li>
         <li>Adresse email : <?php echo isset($_GET['mail']) ? htmlspecialchars($_GET['mail']) : ''; ?></li>
+        <li>Envoyé à : webMaster@gmail.com</li>
         <li>Genre : <?php echo isset($_GET['genre']) ? htmlspecialchars($_GET['genre']) : ''; ?></li>
         <li>Métier : <?php echo isset($_GET['metier']) ? htmlspecialchars($_GET['metier']) : ''; ?></li>
         <li>Date de naissance : <?php echo isset($_GET['date']) ? htmlspecialchars($_GET['date']) : ''; ?></li>
