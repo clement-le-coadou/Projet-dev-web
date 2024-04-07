@@ -32,3 +32,12 @@
 button.stock{
   padding: 2px;
 }
+#collection{
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns:  auto;
+  row-gap: 25px;
+  column-gap: 25px;
+  grid-template-rows: max-content max-content;
+  margin-left: 20%;
+}
