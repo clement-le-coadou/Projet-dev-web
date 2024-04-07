@@ -34,7 +34,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             <div id="collection">
                 <?php foreach($produits as $produit): ?>
                 <div class="article">
-                    <img src="img/<?php echo $produit['photo']; ?>" alt="<?php echo $produit['nom']; ?>">
+                <img src="img/<?php echo $produit['photo']; ?>" alt="<?php echo $produit['nom']; ?>" onclick="showImageFullscreen('img/<?php echo $produit['photo']; ?>')">
                     <h3><?php echo $produit['nom']; ?></h3>
                     <p>Prix : <?php echo $produit['prix']; ?> €</p>
                     <p>Référence : <?php echo $produit['reference']; ?></p>
@@ -59,7 +59,10 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
         </div>
         <?php include "footer.php"; ?>
         
-      
+        <div id="modal" class="modal" onclick="this.style.display='none'">
+            <img id="modal-image" class="modal-content">
+        </div>
+
     </body>
   
 </html>
