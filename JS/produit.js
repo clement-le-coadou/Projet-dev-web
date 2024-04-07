@@ -55,4 +55,16 @@ function toggleStockVisibility() {
     }
 }
 
+// Fonction pour afficher l'image en grand
+function showImage(imageSrc) {
+    var modal = document.getElementById('modal');
+    var modalImg = document.getElementById('modal-image');
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+}
 
+// Fonction pour fermer la boîte modale
+function closeModal() {
+    var modal = document.getElementById('modal');
+    modal.style.display = "none";
+}
