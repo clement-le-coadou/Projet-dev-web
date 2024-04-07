@@ -101,30 +101,20 @@ if (isset($_POST['contact'])) {
         $sujet = $_POST['sujet'];
         $contenu = $_POST['contenu'];
 
-        // Construire le message de l'e-mail
-        $message = "Nom: $nom\n";
-        $message .= "Prénom: $prenom\n";
-        $message .= "Email: $mail\n";
-        $message .= "Genre: $genre\n";
-        $message .= "Métier: $metier\n";
-        $message .= "Date de naissance: $date\n";
-        $message .= "Sujet: $sujet\n";
-        $message .= "Contenu: $contenu\n";
+        // Construire l'URL avec toutes les données transmises via l'URL
+        $redirect_url = "confirmation.php?";
+        $redirect_url .= "nom=" . urlencode($nom) . "&";
+        $redirect_url .= "prenom=" . urlencode($prenom) . "&";
+        $redirect_url .= "mail=" . urlencode($mail) . "&";
+        $redirect_url .= "genre=" . urlencode($genre) . "&";
+        $redirect_url .= "metier=" . urlencode($metier) . "&";
+        $redirect_url .= "date=" . urlencode($date) . "&";
+        $redirect_url .= "sujet=" . urlencode($sujet) . "&";
+        $redirect_url .= "contenu=" . urlencode($contenu);
 
-        // Envoyer l'e-mail au webmaster
-        $to = "clement.le.coadou@gmail.com"; // Remplacez par l'adresse e-mail du webmaster
-        $subject = $sujet;
-        $headers = "From: $mail\r\n";
-
-        echo "<strong>Nom:</strong> $nom<br>";
-        echo "<strong>Prénom:</strong> $prenom<br>";
-        echo "<strong>Email:</strong> $mail<br>";
-        echo "<strong>Genre:</strong> $genre<br>";
-        echo "<strong>Métier:</strong> $metier<br>";
-        echo "<strong>Date de naissance:</strong> $date<br>";
-        echo "<strong>Sujet:</strong> $sujet<br>";
-        echo "<strong>Contenu:</strong> $contenu<br>";
-
+        // Redirection vers la page de confirmation avec toutes les données du formulaire
+        header("Location: " . $redirect_url);
+        exit();
         /* Envoyer l'e-mail
         if (mail($to, $subject, $message, $headers)) {
             echo "E-mail envoyé avec succès.";

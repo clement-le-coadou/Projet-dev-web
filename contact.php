@@ -1,4 +1,4 @@
-<?php include 'php/gestion_contact.php'; include 'php/gestion_connexion.php'; ?>
+<?php include 'php/gestion_contact.php'; ?>
 
 <!doctype html>
 <html lang="fr-FR">
@@ -43,9 +43,9 @@
                     <br>
                     <div class="align-label">
                         <label for="genre">Votre genre :</label>
-                        <input id="genre" name="genre" value="H" type="radio" >
+                        <input id="genre" name="genre" value="H" type="radio" <?php echo (isset($_POST['genre']) && $_POST['genre'] === 'H') ? 'checked' : ''; ?>>
                         <label for="H">H</label>
-                        <input id="genre" name="genre" value="F" type="radio" >
+                        <input id="genre" name="genre" value="F" type="radio" <?php echo (isset($_POST['genre']) && $_POST['genre'] === 'F') ? 'checked' : ''; ?>>
                         <label for="F">F</label>
                         <span id="genre_error" class="error-message"><?php echo $errorMessageGenre; ?></span>
                     </div>
@@ -53,10 +53,16 @@
                     <div class="align-label">
                         <label for="metier">Votre métier :</label>
                         <select name="metier" id="metier">
-                            <option value="">Choississez votre métier</option>
-                            <option value="Fonctionnaire">Education</option>
-                            <option value="Medical">Médical</option>
-                            <option value="Autre">Autre</option>
+                            <option value="">Choisissez votre métier</option>
+                            <option value="Fonctionnaire" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Fonctionnaire') ? 'selected' : ''; ?>>Fonctionnaire</option>
+                            <option value="Éducation" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Éducation') ? 'selected' : ''; ?>>Éducation</option>
+                            <option value="Médical" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Médical') ? 'selected' : ''; ?>>Médical</option>
+                            <option value="Ingénieur" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Ingénieur') ? 'selected' : ''; ?>>Ingénieur</option>
+                            <option value="Artiste" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Artiste') ? 'selected' : ''; ?>>Artiste</option>
+                            <option value="Avocat" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Avocat') ? 'selected' : ''; ?>>Avocat</option>
+                            <option value="Commercial" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Commercial') ? 'selected' : ''; ?>>Commercial</option>
+                            <option value="Informatique" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Informatique') ? 'selected' : ''; ?>>Informatique</option>
+                            <option value="Autre" <?php echo (isset($_POST['metier']) && $_POST['metier'] === 'Autre') ? 'selected' : ''; ?>>Autre</option> value="Autre">Autre</option>
                         </select>
                         <span id="metier_error" class="error-message"><?php echo $errorMessageMetier; ?></span>
                     </div>
@@ -69,13 +75,13 @@
                     <br>
                     <div class="align-label">
                         <label for="sujet">Sujet :</label>
-                        <input id="sujet" name="sujet" type="text" placeholder="Le sujet de votre message">
+                        <input id="sujet" name="sujet" type="text" placeholder="Le sujet de votre message" value="<?php echo isset($_POST['sujet']) ? htmlspecialchars($_POST['sujet']) : ''; ?>">
                         <span id="sujet_error" class="error-message"><?php echo $errorMessageSujet; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="contenu">Contenu :</label>
-                        <input id="contenu" name="contenu" type="text" placeholder="Votre message">
+                        <input id="contenu" name="contenu" type="text" placeholder="Votre message" value="<?php echo isset($_POST['contenu']) ? htmlspecialchars($_POST['contenu']) : ''; ?>">
                         <span id="contenu_error" class="error-message"><?php echo $errorMessageContenu; ?></span>
                     </div>
                     <br>
