@@ -31,7 +31,7 @@ function addToCart(productId,categorie,name) {
 
     if (quantity > 0) {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "panier.php", true);
+        xhr.open("POST", "php/charger_panier.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {

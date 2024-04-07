@@ -1,14 +1,42 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $quantity = $_POST['quantity'];
-    $categorie = $_POST['categorie'];
-    $name = $_POST['name'];
-    $_SESSION['categories'][$categorie][$name]['panier'] = $quantity;
-    echo "Le produit a été ajouté au panier avec succès.";
-    echo $_SESSION['categories'][$categorie][$name]['panier'];
+include 'php/bdd.php';
+
+$bdd = ouverture_bdd();
+
+if(isset($_POST['valider_panier'])){
+    foreach ($_SESSION['categories'] as $categorie => $produits) {
+
+        foreach ($produits as $produit) {
+
+            if (isset($produit['panier']) && $produit['panier'] != 0) {
+                // Calcul de la nouvelle valeur du stock
+                $quantity = $produit['stock'] - $produit['panier'];
+    
+                // Mise à jour du stock dans la base de données
+                $sql = "UPDATE voitures SET stock = :quantity WHERE nom = :name"; // Met à jour le stock
+                $stmt = $bdd->prepare($sql);
+                $stmt->bindParam(':quantity', $quantity, PDO::PARAM_INT);
+                $stmt->bindParam(':name', $produit['nom'], PDO::PARAM_STR);
+    
+                // Exécution de la requête préparée et gestion des erreurs
+                if ($stmt->execute()) {
+                    // Mise à jour du panier dans la session
+                    //$_SESSION['categories'][$categorie][$produit]['panier'] = 0;
+                    echo "La base de données et la session ont été mises à jour avec succès.";
+                } else {
+                    echo "Erreur lors de la mise à jour de la base de données.";
+                }
+            }
+        }
+    }
+    
+    
+    requete_bdd($bdd);
 }
+
+fermeture_bdd($bdd);
 ?>
 
 <!DOCTYPE html>
@@ -41,11 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         foreach ($produits as $nom => $produit) {
                             if (isset($produit['panier']) && $produit['panier'] != 0) {
                                 ?> <div class='produit'><?php
-                                echo $nom . "<br>";
+                                echo $produit['nom'] . "<br>";
                                 echo "Catégorie: " . $categorie . "<br>";
                                 echo "Quantité: " . $produit['panier'] . "<br>";
-                                echo "Prix Unitaire" . $produit['prix']."<br>";
-                                echo "Prix Total".$produit['prix']*$produit['panier']."<br>";
+                                echo "Prix Unitaire " . $produit['prix']."€<br>";
+                                echo "Prix Total ".$produit['prix']*$produit['panier']."€<br>";
                                 ?><hr></div><?php
                                 
                             }
@@ -56,6 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
             </div>
+            <form action="" method="POST">
+                <input type="submit" value="Valider panier" name="valider_panier">
+            </form>
+
         </div>
     </div>
     <?php include "footer.php"; ?>

@@ -2,7 +2,9 @@
 
 session_start(); // Démarrage de la session
 
-$bdd = new PDO('sqlite:bdd.db');
+include 'php/bdd.php';
+
+$bdd = ouverture_bdd();
 
 // Initialisez les messages d'erreur à vide
 $emailError = $passwordError = "";
@@ -83,6 +85,6 @@ if (isset($_POST['connexion'])) {
 
 echo $error;
 
-
+fermeture_bdd($bdd);
 
 ?>

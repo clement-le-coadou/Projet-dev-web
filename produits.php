@@ -55,6 +55,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
 
             </div>
 
+
         </div>
         <?php include "footer.php"; ?>
         

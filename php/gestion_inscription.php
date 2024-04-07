@@ -1,7 +1,9 @@
 <?php
 
+include 'php/bdd.php';
+
 // Connexion à la base de données SQLite
-$bdd = new PDO('sqlite:bdd.db');
+$bdd = ouverture_bdd();
 
 // Requête de création de la table utilisateur
 $query = 'CREATE TABLE IF NOT EXISTS utilisateur (
@@ -155,4 +157,6 @@ if (isset($_POST['Inscription'])) {
 echo $errorMessage;
 
 }
+
+fermeture_bdd($bdd);
 ?>
