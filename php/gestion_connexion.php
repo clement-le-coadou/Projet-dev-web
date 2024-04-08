@@ -56,6 +56,7 @@ if (isset($_POST['connexion'])) {
                     $data = $check->fetch();
     
                     // vérification du mot de passe
+                   
                     if (password_verify($mdp, $data['mdp'])) {
                         
     
@@ -68,17 +69,29 @@ if (isset($_POST['connexion'])) {
                             
                         $_SESSION['connexion']='true';
     
-                        echo "yes";
+                        echo "Connexion réussie";
                     } else {
                         $error = 'Mot de passe incorrect.';
                     }
                 } else {
                     $error = 'Adresse email invalide.';
                 }
-            } else {
+            } else if($mail != 'admin@admin.com')
                 $error = 'Aucun utilisateur trouvé avec cette adresse email.';
             }
-        }
+    }
+// Connexion 'spéciale' pour l'utilisateur admin
+    if ($mail == 'admin@admin.com' && $mdp == '0000'){
+        $_SESSION['id'] = 'adminID';
+        $_SESSION['nom'] = 'admin';
+        $_SESSION['prenom'] = 'admin';
+        $_SESSION['mail'] = 'admin@admin.com';
+        $_SESSION['date'] = '11/11/1111';
+            
+        $_SESSION['connexion']='true';
+        $_SESSION['admin']='true';
+
+        echo "connexion réussie";
     }
     
 }
