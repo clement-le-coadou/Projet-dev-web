@@ -22,7 +22,7 @@
         <div class="content">
         <?php include "left_nav.php" ?>
             <div class="formulaire">
-            <form action="" method="POST" onsubmit="">
+            <form action="" method="POST" onsubmit="validateForm()">
                 <div class="align-label" id="top">
                     <label for="nom">Votre nom :</label>
                     <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>"><br>
