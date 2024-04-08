@@ -20,9 +20,9 @@ $errorMessageMdp = "";
 // Vérifiez si le formulaire a été soumis
 if (isset($_POST['connexion'])) {
     $errorMessageMailConnexion = validateEmail($_POST['mail'] ?? '');
-    $errorMessageMdp = validateMdp($_POST['mdp'] ?? '');
+    $errorMessageMdpConnexion = validateMdp($_POST['mdp'] ?? '');
 
-    if(empty($errorMessageMdp) && empty($errorMessageMailConnexion)){
+    if(empty($errorMessageMdpConnexion) && empty($errorMessageMailConnexion)){
         // Récupérez les valeurs des champs du formulaire
         $email = $_POST['Identifiant'] ?? '';
         $password = $_POST['Mot_de_passe'] ?? '';

@@ -4,8 +4,8 @@ function isValidEmail(email) {
     return emailPattern.test(email);
 }
 function connexionUtilisateur() {
-    var emailInput = document.getElementById('Id');
-    var passwordInput = document.getElementById('Mdp');
+    var emailInput = document.getElementById('IdConnexion');
+    var passwordInput = document.getElementById('MdpConnexion');
     var isValid = true;
 
     var errorMessages = {
@@ -20,8 +20,8 @@ function connexionUtilisateur() {
         isValid = false;
     } else {
         emailInput.classList.remove('error');
-        document.getElementById('email_error').innerText = "";
-        document.getElementById('email_error').style.display = 'none';
+        document.getElementById('email_error_Connexion').innerText = "";
+        document.getElementById('email_error_Connexion').style.display = 'none';
     }
 
     // Vérification du mot de passe
@@ -31,8 +31,8 @@ function connexionUtilisateur() {
         isValid = false;
     } else {
         passwordInput.classList.remove('error');
-        document.getElementById('mdp_error').innerText = "";
-        document.getElementById('mdp_error').style.display = 'none';
+        document.getElementById('mdp_error_Connexion').innerText = "";
+        document.getElementById('mdp_error_Connexion').style.display = 'none';
     }
 
     return isValid;

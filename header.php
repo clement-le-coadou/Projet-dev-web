@@ -16,11 +16,11 @@
     <?php
     }else{ ?>
         <form action="" method="POST" onsubmit="return connexionUtilisateur()">    
-            <input type="email" name="Identifiant" id="Id" placeholder="Identifiant"><br>
-            <span id="email_error" class="error-message" ><?php echo $errorMessageMailConnexion; ?></span>
+            <input type="email" name="Identifiant" id="IdConnexion" placeholder="Identifiant"><br>
+            <span id="email_error_Connexion" class="error-message" ><?php echo $errorMessageMailConnexion; ?></span>
             <br>
-            <input type="password" name="Mot_de_passe" id="Mdp" placeholder="Mot de passe"><br>
-            <span id="mdp_error" class="error-message" ><?php echo $errorMessageMdp; ?></span>
+            <input type="password" name="Mot_de_passe" id="MdpConnexion" placeholder="Mot de passe"><br>
+            <span id="mdp_error_Connexion" class="error-message" ><?php echo $errorMessageMdpConnexion; ?></span>
             <br>
             <button type="submit" value="connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
         </form>
