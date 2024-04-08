@@ -91,7 +91,7 @@ if (isset($_POST['connexion'])) {
         $_SESSION['connexion']='true';
         $_SESSION['admin']='true';
 
-        echo "connexion réussie";
+        echo "connexion réussie en tant qu'administrateur";
     }
     
 }
