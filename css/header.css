@@ -5,13 +5,15 @@ header {
   text-align: right;
   flex-direction: row;
   padding: 10px;
+
 }
 header input{
+  display: flex;
   width: auto;
   height: 45px;
   background-color: #e8e4de;
   color: #303642;
-  margin: 20px;
+
   border-radius: 10px;
 }
 header button{
@@ -35,10 +37,19 @@ header button img{
   display: block;
   clip-path: circle();
 }
-#NewUser{
-  margin-top: 35px;
-  color:#e8e4de;
+.newUser {
+  text-align: center;
+
 }
+
+#NewUser {
+  color: #e8e4de;
+  display: inline-block; /* Utiliser inline-block */
+  margin-top: 25%;
+}
+
+
+
 .topnav{
   list-style-type: none;
   border-radius: 0px 0px 25px 0px;
@@ -64,4 +75,11 @@ header button img{
 .topnav a:hover {
   background-color: #FFFAF4;
   color: #303642;
+}
+
+header form {
+
+  display: inline-flex;
+  align-items: center; /* Aligner les éléments du formulaire */
+  margin-right: 25px;
 }
