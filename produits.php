@@ -51,7 +51,16 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             
                 
                 <?php endforeach; ?>
-                <button class="stock" type="button" onclick="toggleStockVisibility()" style="width:100px;height:50px;">Afficher/Cacher le stock</button>
+                <button class="stock" type="button" onclick=<?php
+                                                            // Vérifier si la variable de session indiquant que l'utilisateur est administrateur est définie et est vraie
+                                                            if($_SESSION['admin'] == true) {
+                                                                echo "toggleStockVisibility();"; // Exécuter la fonction seulement si l'utilisateur est administrateur
+                                                            }
+                                                            else{
+                                                                echo "Vous n'avez pas l'autorisation nécessaire pour effectuer cette action";
+                                                            }
+                                                            ?>
+                 style="width:100px;height:50px;"> Afficher/Cacher le stock </button>
 
             </div>
 
