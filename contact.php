@@ -24,19 +24,19 @@
                 <form action="" method="POST" onsubmit="return validateContactForm()">
                     <div class="align-label" id="top">
                         <label for="nom">Votre nom :</label>
-                        <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" value="<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>">
+                        <input id="nom" name="nom" type="text" placeholder="Entrez votre nom" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : (isset($_SESSION['nom']) ? htmlspecialchars($_SESSION['nom']) : ''); ?>">
                         <span id="nom_error" class="error-message"><?php echo $errorMessageNom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="prenom">Votre prénom :</label>
-                        <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom" value="<?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : ''; ?>">
+                        <input id="prenom" name="prenom" type="text" placeholder="Entrez votre prénom" value="<?php echo isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : (isset($_SESSION['prenom']) ? htmlspecialchars($_SESSION['prenom']) : ''); ?>">
                         <span id="prenom_error" class="error-message"><?php echo $errorMessagePrenom; ?></span>
                     </div>
                     <br>
                     <div class="align-label">
                         <label for="mail">Votre adresse email :</label>
-                        <input id="mail" name="mail" type="email" placeholder="Entrez votre email" value="<?php echo isset($_SESSION['mail']) ? $_SESSION['mail'] : ''; ?>">
+                        <input id="mail" name="mail" type="email" placeholder="Entrez votre email" value="<?php echo isset($_POST['mail']) ? htmlspecialchars($_POST['mail']) : (isset($_SESSION['mail']) ? htmlspecialchars($_SESSION['mail']) : ''); ?>">
                         <span id="mail_error" class="error-message"><?php echo $errorMessageMail; ?></span>
                     </div>
                     <br>
@@ -68,7 +68,7 @@
                     <br>
                     <div class="align-label">
                         <label for="date">Votre date de naissance :</label><br>
-                        <input id="date" name="date" type="date" value="<?php echo isset($_SESSION['date']) ? $_SESSION['date'] : ''; ?>">
+                        <input id="date" name="date" type="date" value="<?php echo isset($_POST['date']) ? htmlspecialchars($_POST['date']) : (isset($_SESSION['date']) ? htmlspecialchars($_SESSION['date']) : ''); ?>">
                         <span id="date_error" class="error-message"><?php echo $errorMessageDate; ?></span>
                     </div>
                     <br>

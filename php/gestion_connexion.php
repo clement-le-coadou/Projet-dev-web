@@ -78,7 +78,7 @@ if (isset($_POST['connexion'])) {
                                 
                             $_SESSION['connexion']='true';
         
-                            echo "Connexion réussie";
+                            $connexion = "Vous êtes connecté !";
                         } else {
                             $errorMessageMdpConnexion = 'Mot de passe incorrect.';
                         }

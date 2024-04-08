@@ -13,6 +13,8 @@
         ?><form action="php/deconnexion.php" method="post">
             <button type=submit name="deco"><img src="img/connexion.png" alt=""></button>
         </form>
+
+        <span id="connexionReussie"><?php echo $connexion;?></span>
     <?php
     }else{ ?>
         <form action="" method="POST" onsubmit="return connexionUtilisateur()">    

@@ -83,3 +83,8 @@ header form {
   align-items: center; /* Aligner les éléments du formulaire */
   margin-right: 25px;
 }
+
+#connexionReussie{
+  color: red;
+  font-weight: bold;
+}

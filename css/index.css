@@ -8,8 +8,8 @@
     text-align: center;
 }
 .item img {
-    max-width: 200px;
-    max-height: 150px;
+    width: 200px;
+    height: 100px;
 }
 .contenant{
     display: flex;
@@ -23,3 +23,8 @@
     padding: auto;
     text-align: center;
   }
+
+.visionneuse h2{
+    color: black;
+    text-transform: capitalize;
+}
