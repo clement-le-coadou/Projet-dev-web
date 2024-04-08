@@ -31,6 +31,8 @@
 
 button.stock{
   padding: 2px;
+  width:100px;
+  height:50px;
 }
 #collection{
   grid-column: 1/2;

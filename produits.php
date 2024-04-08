@@ -53,7 +53,7 @@ $button_message = "";
             
                 
                 <?php endforeach; ?>
-                <button class="stock" type="button" onclick=checkAdminStatus() style="width:100px;height:50px;"> Afficher/Cacher le stock </button>
+                <button class="stock" type="button" onclick=checkAdminStatus()> Afficher/Cacher le stock </button>
                  <span id="bouton_stock"></span>
 
             </div>
