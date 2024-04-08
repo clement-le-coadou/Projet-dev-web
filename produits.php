@@ -9,6 +9,8 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
     header("Location: index.php");
     exit;
 }
+
+$button_message = "";
 ?>
 <!doctype html>
 <html lang="fr-FR">
@@ -51,16 +53,8 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
             
                 
                 <?php endforeach; ?>
-                <button class="stock" type="button" onclick=<?php
-                    // Vérifier si la variable de session indiquant que l'utilisateur est administrateur est définie et est vraie
-                    if($_SESSION['admin'] == true) {
-                        echo "toggleStockVisibility();"; // Exécuter la fonction seulement si l'utilisateur est administrateur
-                    }
-                    else{
-                        echo "Vous n'avez pas l'autorisation nécessaire pour effectuer cette action";
-                    }
-                    ?>
-                 style="width:100px;height:50px;"> Afficher/Cacher le stock </button>
+                <button class="stock" type="button" onclick=checkAdminStatus() style="width:100px;height:50px;"> Afficher/Cacher le stock </button>
+                 <span id="bouton_stock"></span>
 
             </div>
 
@@ -73,5 +67,20 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
         </div>
 
     </body>
+
+    <script>
+        function checkAdminStatus() {
+            // Vérifier si l'utilisateur est administrateur côté client
+            // Vous pouvez utiliser une variable JavaScript pour simuler l'état d'administrateur
+            var isAdmin = <?php echo isset($_SESSION['admin']) && $_SESSION['admin'] == true ? 'true' : 'false'; ?>;
+
+            if (isAdmin) {
+                toggleStockVisibility();
+            } else {
+                // Afficher le message d'autorisation approprié
+                document.getElementById("bouton_stock").textContent = "Vous n'avez pas l'autorisation nécessaire pour effectuer cette action";
+            }
+        }
+    </script>
   
 </html>
