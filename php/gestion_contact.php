@@ -4,73 +4,7 @@
 $errorMessageNom = $errorMessagePrenom = $errorMessageMail = $errorMessageGenre = $errorMessageMetier = $errorMessageDate = $errorMessageSujet = $errorMessageContenu = "";
 
 
-function validateNom($nom) {
-    if (empty($nom)) {
-        return "Le champ Nom est vide.";
-    } elseif (strlen($nom) < 2 || strlen($nom) > 50) {
-        return "Le nom doit avoir entre 2 et 50 caractères.";
-    }
-    return "";
-}
-
-function validatePrenom($prenom) {
-    if (empty($prenom)) {
-        return "Le champ Prénom est vide.";
-    } elseif (strlen($prenom) < 2 || strlen($prenom) > 50) {
-        return "Le prénom doit avoir entre 2 et 50 caractères.";
-    }
-    return "";
-}
-
-function validateEmail($email) {
-    if (empty($email)) {
-        return "Le champ Email est vide.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "L'adresse email n'est pas valide.";
-    }
-    return "";
-}
-
-function validateGenre($genre) {
-    if (empty($genre)) {
-        return "Le champ Genre est vide.";
-    } elseif ($genre != "H" && $genre != "F") {
-        return "Veuillez sélectionner un genre valide.";
-    }
-    return "";
-}
-
-function validateMetier($metier) {
-    if (empty($metier)) {
-        return "Le champ Métier est vide.";
-    }
-    return "";
-}
-
-function validateDateNaissance($dateNaissance) {
-    if (empty($dateNaissance)) {
-        return "Le champ Date de naissance est vide.";
-    } elseif (!strtotime($dateNaissance)) {
-        return "La date de naissance n'est pas valide.";
-    } elseif (strtotime($dateNaissance) > time()) {
-        return "La date de naissance ne peut pas être dans le futur.";
-    }
-    return "";
-}
-
-function validateSujet($sujet) {
-    if (empty($sujet)) {
-        return "Le champ Sujet est vide.";
-    }
-    return "";
-}
-
-function validateContenu($contenu) {
-    if (empty($contenu)) {
-        return "Le champ Contenu est vide.";
-    }
-    return "";
-}
+include 'php/gestion_formulaire.php';
 
 
 

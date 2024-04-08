@@ -13,7 +13,6 @@
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/formulaires.css" rel="stylesheet" />
         <script src="JS/contact.js" defer></script>
-        <script src="JS/connexion.js" defer></script>
     </head>
 
     <body>

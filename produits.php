@@ -10,7 +10,7 @@ if(isset($_GET['cat']) && isset($_SESSION['categories'][$_GET['cat']])) {
     exit;
 }
 
-$button_message = "";
+$adminVisibility = isset($_SESSION['admin']) && $_SESSION['admin'] == "true" ? 'visible' : 'collapse';
 ?>
 <!doctype html>
 <html lang="fr-FR">
@@ -25,6 +25,13 @@ $button_message = "";
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/article.css" rel="stylesheet" />
         <script src="JS/produit.js" defer></script>
+        <script>
+            window.onload = function() {
+            var adminVisibility = "<?php echo $adminVisibility; ?>";
+            var boutonStock = document.querySelector('.bouton_stock');
+            boutonStock.style.visibility = adminVisibility;
+        };
+    </script>
     </head>
 
     <body>

@@ -1,7 +1,11 @@
 <?php session_start(); ?>
 <link href="css/header.css" rel="stylesheet" />
+<link href="css/formulaires.css" rel="stylesheet" />
+
 <?php include "php/gestion_connexion.php";?>
-<header>            
+<script src="JS/connexion.js"></script>
+<header>
+                
     <h2><?php echo $categorie ?></h2>
     <h1 class="name"> DripCars</h1>
     <img class="Logo" src="img/Logo.png" alt="Not Loaded" width="100" />    
@@ -11,15 +15,16 @@
         </form>
     <?php
     }else{ ?>
-    <form action="" method="POST" onsubmit="">    
-                <input type="email" name="Identifiant" id="Id" placeholder="Identifiant">
-                <span id="emailError" class="error" style="display:none;">Adresse e-mail incorrecte</span>
-                <br>
-                <input type="password" name="Mot_de_passe" id="Mdp" placeholder="Mot de passe">
-                <span id="passwordError" class="error" style="display:none;">Veuillez entrer un mot de passe</span>
-                <br>
-                <button type="submit" value = "connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
-            </form>
+        <form action="" method="POST" onsubmit="return connexionUtilisateur()">    
+            <input type="email" name="Identifiant" id="Id" placeholder="Identifiant"><br>
+            <span id="email_error" class="error-message" ><?php echo $errorMessageMailConnexion; ?></span>
+            <br>
+            <input type="password" name="Mot_de_passe" id="Mdp" placeholder="Mot de passe"><br>
+            <span id="mdp_error" class="error-message" ><?php echo $errorMessageMdp; ?></span>
+            <br>
+            <button type="submit" value="connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
+        </form>
+
     <a href="inscription.php" id="NewUser"> Nouvel Utilisateur ?</a>
     <?php }?>
 </header>
