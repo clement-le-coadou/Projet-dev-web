@@ -81,27 +81,23 @@ if (isset($_POST['Inscription'])) {
                             header('Location:index.php');
                             die();
                         } else {
-                            $errorMessage = 'Les mots de passe saisis ne correspondent pas.';
+                            $errorMessageConfMdp = 'Les mots de passe saisis ne correspondent pas.';
                         }
                     } else {
-                        $errorMessage = 'L\'adresse email n\'est pas valide.';
+                        $errorMessageMail = 'L\'adresse email n\'est pas valide.';
                     }
                 } else {
-                    $errorMessage = 'La longueur de l\'adresse email dépasse la limite autorisée.';
+                    $errorMessageMail = 'La longueur de l\'adresse email dépasse la limite autorisée.';
                 }
             } else {
-                $errorMessage = 'La longueur du nom ou du prénom dépasse la limite autorisée.';
+                $errorMessageNom = 'La longueur du nom ou du prénom dépasse la limite autorisée.';
             }
         } else {
-            $errorMessage = 'Un utilisateur avec cette adresse email est déjà enregistré.';
+            $errorMessageMail = 'Un utilisateur avec cette adresse email est déjà enregistré.';
         }
-    } else {
-        $errorMessage = 'Veuillez remplir tous les champs.';
     }
 
 
-// Affiche le message d'erreur (s'il y en a un)
-echo $errorMessage;
 
 }
 

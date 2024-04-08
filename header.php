@@ -16,14 +16,15 @@
     <?php
     }else{ ?>
         <form action="" method="POST" onsubmit="return connexionUtilisateur()">    
-            <input type="email" name="Identifiant" id="IdConnexion" placeholder="Identifiant">
-            <span id="email_error_Connexion" class="error-message" ><?php echo $errorMessageMailConnexion; ?></span>
+            <input type="email" name="Identifiant" id="IdConnexion" placeholder="Identifiant" value="<?php echo isset($_POST['Identifiant']) ? htmlspecialchars($_POST['Identifiant']) : ''; ?>">
+            <span id="email_error_Connexion" class="error-message"><?php echo $errorMessageMailConnexion; ?></span>
 
-            <input type="password" name="Mot_de_passe" id="MdpConnexion" placeholder="Mot de passe">
-            <span id="mdp_error_Connexion" class="error-message" ><?php echo $errorMessageMdpConnexion; ?></span>
+            <input type="password" name="Mot_de_passe" id="MdpConnexion" placeholder="Mot de passe" value="<?php echo isset($_POST['Mot_de_passe']) ? htmlspecialchars($_POST['Mot_de_passe']) : ''; ?>">
+            <span id="mdp_error_Connexion" class="error-message"><?php echo $errorMessageMdpConnexion; ?></span>
             
             <button type="submit" value="connexion" name="connexion"><img src="img/user.png" alt="Connexion"></button>
         </form>
+
         <br>
         <div class="newUser">
             <a href="inscription.php" id="NewUser">Nouvel Utilisateur</a>

@@ -1,6 +1,5 @@
 <?php
 
-session_start(); // Démarrage de la session
 
 include 'php/bdd.php';
 include 'php/gestion_formulaire.php';
@@ -15,12 +14,12 @@ $error = "";
 
 
 $errorMessageMailConnexion = "";
-$errorMessageMdp = "";
+$errorMessageMdpConnexion = "";
 
 // Vérifiez si le formulaire a été soumis
 if (isset($_POST['connexion'])) {
-    $errorMessageMailConnexion = validateEmail($_POST['mail'] ?? '');
-    $errorMessageMdpConnexion = validateMdp($_POST['mdp'] ?? '');
+    $errorMessageMailConnexion = validateEmail($_POST['Identifiant'] ?? '');
+    $errorMessageMdpConnexion = validateMdp($_POST['Mot_de_passe'] ?? '');
 
     if(empty($errorMessageMdpConnexion) && empty($errorMessageMailConnexion)){
         // Récupérez les valeurs des champs du formulaire
@@ -81,13 +80,13 @@ if (isset($_POST['connexion'])) {
         
                             echo "Connexion réussie";
                         } else {
-                            $error = 'Mot de passe incorrect.';
+                            $errorMessageMdpConnexion = 'Mot de passe incorrect.';
                         }
                     } else {
-                        $error = 'Adresse email invalide.';
+                        $errorMessageMailConnexion = 'Adresse email invalide.';
                     }
                 } else if($mail != 'admin@admin.com')
-                    $error = 'Aucun utilisateur trouvé avec cette adresse email.';
+                    $errorMessageMailConnexion = 'Aucun utilisateur trouvé avec cette adresse email.';
                 }
         }
         // Connexion 'spéciale' pour l'utilisateur admin
@@ -107,7 +106,6 @@ if (isset($_POST['connexion'])) {
     }
 }
 
-echo $error;
 
 fermeture_bdd($bdd);
 
