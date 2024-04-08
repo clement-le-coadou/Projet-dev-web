@@ -1,0 +1,25 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item {
+    margin: 10px;
+    text-align: center;
+}
+.item img {
+    max-width: 200px;
+    max-height: 150px;
+}
+.contenant{
+    display: flex;
+}
+
+.visionneuse{
+    width: 100%;
+    height: fit-content;
+    background: #e8e4de;
+    border-radius: 20px;
+    padding: auto;
+    text-align: center;
+  }

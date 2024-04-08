@@ -10,17 +10,26 @@
         <title>Drip Team</title>
         <link href="css/style.css" rel="stylesheet" />
         <link href="css/article.css" rel="stylesheet" />
+        <link href="css/index.css" rel="stylesheet" />
     </head>
 
     <body>
         <?php include "header.php"; ?>
 
-        <div class="content">
-            <?php include "left_nav.php" ?>
-            <div id="collection1">           
-                <div class="article">
-                    azdadad
-                </div>
+        <div class="contenant">
+        <?php include "left_nav.php" ?>   
+            <div class="visionneuse">
+                <?php foreach ($_SESSION['categories'] as $category => $cars): ?>
+                    <h2><?php echo ucfirst($category); ?></h2>
+                    <div class="gallery">
+                        <?php foreach ($cars as $car): ?>
+                            <div class="item">
+                                <img src="img/<?php echo $car['photo']; ?>" alt="<?php echo $car['nom']; ?>">
+                                <p><?php echo $car['nom']; ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
         </div>
