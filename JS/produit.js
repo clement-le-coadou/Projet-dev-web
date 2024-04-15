@@ -24,26 +24,41 @@ function decrement(productId) {
 
     }
 }
+    function addToCart(productId, categorie, name) {
+        var quantityElement = document.getElementById('panier_' + productId);
+        var quantity = parseInt(quantityElement.textContent);
+        var stockElement = document.getElementById('stock_' + productId);
+        var stock = parseInt(stockElement.textContent);
 
-function addToCart(productId,categorie,name) {
-    var quantityElement = document.getElementById('panier_' + productId);
-    var quantity = parseInt(quantityElement.textContent);
-
-    if (quantity > 0) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/charger_panier.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log(xhr.responseText);
+        if (quantity > 0) {
+            // Vérifier si la quantité ajoutée au panier est inférieure ou égale au stock affiché
+            if (quantity <= stock) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "php/charger_panier.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Mettre à jour l'affichage du stock après l'ajout au panier
+                        updateStockDisplay(productId, quantity);
+                        console.log(xhr.responseText);
+                    }
+                };
+                xhr.send("product_id=" + productId + "&quantity=" + quantity + "&categorie=" + categorie + "&name=" + name);
+            } else {
+                alert("La quantité ajoutée au panier dépasse le stock disponible.");
             }
-        };
-        xhr.send("product_id=" + productId + "&quantity=" + quantity+"&categorie="+categorie+"&name="+name);
-    } else {
-        alert("Veuillez sélectionner au moins une quantité.");
+        } else {
+            alert("Veuillez sélectionner au moins une quantité.");
+        }
     }
-}
 
+    // Fonction pour mettre à jour l'affichage du stock
+    function updateStockDisplay(productId, quantityAdded) {
+        var stockElement = document.getElementById('stock_' + productId);
+        var currentStock = parseInt(stockElement.textContent);
+        var newStock = currentStock - quantityAdded;
+        stockElement.textContent = newStock;
+    }
 function toggleStockVisibility() {
     var stocks = document.getElementsByClassName('stock');
     for (var i = 0; i < stocks.length; i++) {
